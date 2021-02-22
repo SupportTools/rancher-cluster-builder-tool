@@ -16,3 +16,8 @@ steps:
         from_secret: docker-username
       password:
         from_secret: docker-password
+    when:
+      branch: master
+      event:
+        include:
+        - push
