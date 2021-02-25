@@ -28,3 +28,8 @@ tar -zvxf helm-* && \
 cd linux-amd64 && \
 chmod u+x helm && \
 mv helm /usr/local/bin/helm
+
+## Install nsenter
+RUN curl -kLO "https://raw.githubusercontent.com/alexei-led/nsenter/master/nsenter-node.sh" && \
+chmod u+x nsenter-node.sh && \
+mv nsenter-node.sh /usr/local/bin/nsenter-node
