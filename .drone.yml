@@ -14,7 +14,9 @@ steps:
       repo: supporttools/rancher-cluster-builder
       tags:
         - ${DRONE_BUILD_NUMBER}
+        - ${DRONE_BUILD_NUMBER}-amd64
         - latest
+        - latest-amd64
       cache_from: supporttools/rancher-cluster-builder:latest
       username:
         from_secret: docker-username
@@ -27,7 +29,7 @@ steps:
         - push
 
 node_selector:
-  beta.kubernetes.io/arch: amd64
+  hardware: nvidia
   drone-runner: true
 
 ---
@@ -46,7 +48,9 @@ steps:
       repo: supporttools/rancher-cluster-builder
       tags:
         - ${DRONE_BUILD_NUMBER}
+        - ${DRONE_BUILD_NUMBER}-arm64
         - latest
+        - latest-arm64
       cache_from: supporttools/rancher-cluster-builder:latest
       username:
         from_secret: docker-username
@@ -59,5 +63,5 @@ steps:
         - push
 
 node_selector:
-  beta.kubernetes.io/arch: armd64
+  hardware: raspberrypi4
   drone-runner: true
