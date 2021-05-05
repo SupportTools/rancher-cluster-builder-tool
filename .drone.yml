@@ -30,7 +30,7 @@ steps:
         - push
 
 node_selector:
-  hardware: nvidia
+  hardware: vmware
   drone-runner: true
 
 ---
