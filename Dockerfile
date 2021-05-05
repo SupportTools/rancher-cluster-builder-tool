@@ -18,7 +18,7 @@ chmod u+x kubectl && \
 mv kubectl /usr/local/bin/kubectl
 
 ## Install RKE
-RUN curl -kLO "https://github.com/rancher/rke/releases/download/v1.2.7/rke_linux-amd64" && \
+RUN curl -kLO "https://github.com/rancher/rke/releases/download/v1.2.8/rke_linux-amd64" && \
 chmod u+x rke_linux-amd64 && \
 mv rke_linux-amd64 /usr/local/bin/rke
 
