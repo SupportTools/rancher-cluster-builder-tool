@@ -11,13 +11,14 @@ steps:
   - name: Docker-build
     image: plugins/docker
     settings:
+      custom_dns: [ 1.1.1.1, 8.8.8.8 ]
       repo: supporttools/rancher-cluster-builder
       tags:
         - ${DRONE_BUILD_NUMBER}
         - ${DRONE_BUILD_NUMBER}-amd64
         - latest
         - latest-amd64
-      cache_from: supporttools/rancher-cluster-builder:latest
+      cache_from: supporttools/rancher-cluster-builder:latest-amd64
       username:
         from_secret: docker-username
       password:
@@ -45,13 +46,14 @@ steps:
   - name: Docker-build
     image: plugins/docker
     settings:
+      custom_dns: [ 1.1.1.1, 8.8.8.8 ]
       repo: supporttools/rancher-cluster-builder
       tags:
         - ${DRONE_BUILD_NUMBER}
         - ${DRONE_BUILD_NUMBER}-arm64
         - latest
         - latest-arm64
-      cache_from: supporttools/rancher-cluster-builder:latest
+      cache_from: supporttools/rancher-cluster-builder:latest-arm64
       username:
         from_secret: docker-username
       password:
